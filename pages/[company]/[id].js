@@ -5,6 +5,7 @@ import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import getData from "../../data";
+import { useAppContext } from "../../NotWorkingContext";
 
 const style = {
   wrapper: `bg-[#f4f6f8] h-full dark:bg-[#121721] transition duration-500 text-black dark:text-white items-center mx-auto justify-center`,
@@ -28,7 +29,7 @@ const style = {
 };
 
 export default function Id() {
-  const [darkMode, setDarkMode] = useState(false);
+  const {darkMode, setDarkMode} = useAppContext();
   const [singleJob, setSingleJob] = useState([]);
   const router = useRouter();
   const job = router.query;

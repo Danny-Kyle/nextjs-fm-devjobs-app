@@ -1,31 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
-export const themes = {
-  lightMode: {
-    foreground: "#000000",
-    background: "#eeeeee",
-  },
-  darkMode: {
-    foreground: "#ffffff",
-    background: "#222222",
-  },
-};
-
-export const AppContext = React.createContext({
-  theme: undefined,
-  setTheme: async (theme) => null,
-});
-
-export const useTheme = () => useContext(AppContext);
+export const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
-  const [theme, setTheme] = useState(themes.lightMode);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(()=>{
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  },[darkMode])
 
   return (
-    <AppContext.Provider value={{ theme, setTheme }}>
+    <AppContext.Provider value={{ darkMode, setDarkMode }}>
       {children}
     </AppContext.Provider>
   );
 };
+
+export const useAppContext= ()=> {
+  return useContext(AppContext);
+}
 
 export default AppProvider;

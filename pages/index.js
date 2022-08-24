@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import Jobs from "../components/Jobs";
 import NavBar from "../components/NavBar";
+import { useAppContext } from "../NotWorkingContext";
 
 
 const styles = {
@@ -9,7 +10,7 @@ const styles = {
 };
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const {darkMode, setDarkMode} = useAppContext();
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
       <Head>
