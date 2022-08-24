@@ -6,7 +6,7 @@ import { useAppContext } from "../NotWorkingContext";
 
 
 const styles = {
-  wrapper: `bg-[#f4f6f8] dark:bg-[#121721] h-full transition duration-500 text-black dark:text-white items-center mx-auto justify-center`,
+  wrapper: `bg-[#f4f6f8] dark:bg-[#121721] min-h-screen transition duration-500 text-black dark:text-white items-center mx-auto justify-center`,
 };
 
 export default function Home() {
