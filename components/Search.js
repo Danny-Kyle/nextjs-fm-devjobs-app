@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState} from "react";
+import getData from "../data";
 
 const styles = {
   wrapper: `-mt-10 z-30`,
@@ -13,18 +14,25 @@ const styles = {
   search: `py-4 px-9 bg-blue-600 font-semibold rounded-xl text-white mr-3`,
 };
 
-const Search = ({
-  query,
-  setQuery,
-  setJobs,
-  searchTitle,
-}) => {
+const Search = ({jobs, setJobs}) => { 
+  const [query, setQuery] = useState({
+    title: ``,
+    location: ``,
+  });
+  
+  const searchTitle = jobs.filter((job) => job.jobName.toLowerCase().includes(query.title) && job.jobLocation.toLowerCase().includes(query.location));
+
+  useEffect(() => {
+    const data = getData();
+    setJobs(data);
+  }, []);
+
   const handleTitleChange = (e) => {
-    setQuery({...query, title: e.target.value});
+    setQuery({ ...query, title: e.target.value });
   };
 
   const handleLocationChange = (j) => {
-    setQuery({...query, location: j.target.value});
+    setQuery({ ...query, location: j.target.value });
   };
 
   return (

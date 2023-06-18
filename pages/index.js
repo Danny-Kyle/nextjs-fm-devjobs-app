@@ -1,16 +1,14 @@
 import Head from "next/head";
-import { useState } from "react";
 import Jobs from "../components/Jobs";
 import NavBar from "../components/NavBar";
-import { useAppContext } from "../NotWorkingContext";
-
+import { useAppContext } from "../context/Context";
 
 const styles = {
   wrapper: `bg-[#f4f6f8] dark:bg-[#121721] min-h-screen transition duration-500 text-black dark:text-white items-center mx-auto justify-center`,
 };
 
 export default function Home() {
-  const {darkMode, setDarkMode} = useAppContext();
+  const {darkMode} = useAppContext();
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
       <Head>
@@ -19,9 +17,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.wrapper}>
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <NavBar />
         <Jobs />
-        
       </div>
     </div>
   );

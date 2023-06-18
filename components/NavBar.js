@@ -4,19 +4,20 @@ import moon from "/public/assets/desktop/icon-moon.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Switch } from "@headlessui/react";
+import { useAppContext } from "../context/Context";
 
 const styles = {
   text: ``,
   wrapper: ``,
   div: `flex flex-row justify-end items-center px-32 py-12 text-white mx-auto`,
-  bgImage: `bg-[url('/assets/desktop/bg-pattern-header.svg')] h-[160px]`,
   themeSwitcher: `ml-auto`,
   logo: `cursor-pointer`,
 };
 
-const NavBar = ({ darkMode, setDarkMode }) => {
+const NavBar = () => {
+  const {darkMode, setDarkMode} = useAppContext();
   return (
-    <div className={styles.bgImage}>
+    <div className="bg-hero-pattern bg-cover h-[160px]">
       <nav className={styles.wrapper}>
         <div className={styles.div}>
           <Link href="/">

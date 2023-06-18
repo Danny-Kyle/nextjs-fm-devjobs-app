@@ -1,9 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-export const AppContext = React.createContext()
+const AppContext = createContext()
+
+const initialValue = {}
+
+// const JobContextProvider = ()=> {
+//   const filterByInfos
+// }
+
+const filterByInfos = {}
+
+const filterByLocation = {}
+
+const fullTimeOnly = {}
+
+const updateFilterParams = ()=> {}
+
+const updateNumberOfJobs = ()=> {}
 
 export const AppProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
+
+  const contextValue = {}
 
   useEffect(()=>{
     localStorage.setItem("darkMode", JSON.stringify(darkMode));

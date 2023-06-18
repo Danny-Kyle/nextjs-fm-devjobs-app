@@ -150,7 +150,8 @@ export default function data() {
       jobLocation: "Ukraine",
       timePosted: "2mo ago",
       companyName: "Maker",
-      description: "Maker is looking for  a Senior React Native Developer to work on building and maintaining our core React Native mobile applications. You will be able to link up with the other members of the team and help out where needed."
+      description:
+        "Maker is looking for  a Senior React Native Developer to work on building and maintaining our core React Native mobile applications. You will be able to link up with the other members of the team and help out where needed.",
     },
     {
       jobName: "Front-End Developer",
@@ -169,7 +170,8 @@ export default function data() {
       jobLocation: "Scotland",
       timePosted: "6mo ago",
       companyName: "Creative",
-      description: "We're looking for a Backend developer that specializes in the use of Laravel to be able to come in and take control of the Laravel Team over here at Creative. You would be in charge of our Backend team and the right person will be able to take this team to the next level."
+      description:
+        "We're looking for a Backend developer that specializes in the use of Laravel to be able to come in and take control of the Laravel Team over here at Creative. You would be in charge of our Backend team and the right person will be able to take this team to the next level.",
     },
     {
       jobName: "Senior Product Manager",
@@ -178,7 +180,8 @@ export default function data() {
       jobLocation: "Scotland",
       timePosted: "6mo ago",
       companyName: "Pod",
-      description: "Join our dynamic team in developing Pod’s core products and supporting infrastructure. You will help lead new initiatives to build and improve the testing, staging and deployment solutions. You will interact with all development teams, development leadership and our hosting/IT staff to define requirements and goals for all available platforms."
+      description:
+        "Join our dynamic team in developing Pod’s core products and supporting infrastructure. You will help lead new initiatives to build and improve the testing, staging and deployment solutions. You will interact with all development teams, development leadership and our hosting/IT staff to define requirements and goals for all available platforms.",
     },
     {
       jobName: "Midweight Front-End Developer",
@@ -197,7 +200,8 @@ export default function data() {
       jobLocation: "Scotland",
       timePosted: "1yr ago",
       companyName: "Pomodoro",
-      description: "We are looking for thoughtful, AWS engineer to join our team. We’re looking for someone to help build out the foundation of the app and infrastructure. If you are interested in taking part in building an application that millions of people use every day to increase their productivity, this is the perfect opportunity."
+      description:
+        "We are looking for thoughtful, AWS engineer to join our team. We’re looking for someone to help build out the foundation of the app and infrastructure. If you are interested in taking part in building an application that millions of people use every day to increase their productivity, this is the perfect opportunity.",
     },
     {
       jobName: "Senior BackEnd Java Developer",
@@ -206,7 +210,8 @@ export default function data() {
       jobLocation: "United Kingdom",
       timePosted: "1yr ago",
       companyName: "Typemaster",
-      description: "We are looking for a talented Java Developer to join our Backend Team over here at TypeMaster. You’ll be working as part of a skilled, collaborative team to jointly design and implement high visibility applications"
+      description:
+        "We are looking for a talented Java Developer to join our Backend Team over here at TypeMaster. You’ll be working as part of a skilled, collaborative team to jointly design and implement high visibility applications",
     },
   ];
 }

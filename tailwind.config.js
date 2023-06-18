@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/assets/desktop/bg-pattern-header.svg')",
+      }
+    },
   },
   plugins: [],
 };

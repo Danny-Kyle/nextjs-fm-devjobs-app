@@ -5,18 +5,18 @@ import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import getData from "../../data";
-import { useAppContext } from "../../NotWorkingContext";
+import { useAppContext } from "/context/Context";
 
 const style = {
   wrapper: `bg-[#f4f6f8] h-full dark:bg-[#121721] transition duration-500 text-black dark:text-white items-center mx-auto justify-center`,
   image: ``,
   footer: `flex flex-col items-center justify-evenly px-6 py-4 justify-end bg-white dark:bg-gray-800 sm:flex-row`,
-  butdiv: `bg-blue-700 p-4 rounded-lg text-white cursor-pointer hover:bg-blue-400`,
+  butDiv: `bg-blue-700 p-4 rounded-lg text-white cursor-pointer hover:bg-blue-400`,
   text: `font-bold text-2xl mt-5 mb-2`,
-  comptext: `text-sm text-gray-600`,
-  webtext: `text-sm text-gray-600 cursor-pointer`,
-  compsite: `bg-[#fff] -mt-12 dark:bg-[#19202d] items-center justify-between flex flex-row text-center mx-[300px] rounded-lg`,
-  compsitebutton: `bg-gray-100 p-4 rounded-lg text-blue-500 font-semibold cursor-pointer hover:bg-gray-300 mr-16`,
+  compText: `text-sm text-gray-600`,
+  webText: `text-sm text-gray-600 cursor-pointer`,
+  compSite: `bg-[#fff] -mt-12 dark:bg-[#19202d] items-center justify-between flex flex-row text-center mx-[300px] rounded-lg`,
+  compSiteButton: `bg-gray-100 dark:bg-blue-600 dark:text-gray-100 p-4 rounded-lg text-blue-500 font-semibold cursor-pointer hover:bg-gray-300 mr-16`,
   web: `flex`,
   websitetext: `text-left ml-12`,
   jobdesc: `mx-[300px] bg-[#fff] dark:bg-[#19202d] my-9 flex flex-col p-8`,
@@ -40,27 +40,27 @@ export default function Id() {
     setSingleJob(data);
   }, []);
 
-  const finalsingleJob = singleJob.find((work) => work.jobName === job.id);
-  console.log(finalsingleJob);
+  const finalSingleJob = singleJob.find((work) => work.jobName === job.id);
+  console.log(finalSingleJob);
 
-  function mapfinalsinglejob() {
+  function mapFinalSingleJob() {
     return (
       <>
         <article className={style.desctypearticle}>
-          <p>{finalsingleJob?.timePosted}</p>
+          <p>{finalSingleJob?.timePosted}</p>
           <p>.</p>
-          <p>{finalsingleJob?.jobType}</p>
+          <p>{finalSingleJob?.jobType}</p>
         </article>
         <div className={style.descheadercontainer}>
-          <h1 className={style.desctypeheader}>{finalsingleJob?.jobName}</h1>
+          <h1 className={style.desctypeheader}>{finalSingleJob?.jobName}</h1>
           <Link href={`https://example.com/${job.company}`}>
             <p className={style.descContainerButton}>Apply Now</p>
           </Link>
         </div>
-        <p className={style.desctypecountry}>{finalsingleJob?.jobLocation}</p>
+        <p className={style.desctypecountry}>{finalSingleJob?.jobLocation}</p>
 
         <article className={style.jobreqart}>
-          <p>{finalsingleJob?.description}</p>
+          <p>{finalSingleJob?.description}</p>
           <h1 className="capitalize text-2xl font-semibold text-black dark:text-white my-4">
             requirements
           </h1>
@@ -148,40 +148,40 @@ export default function Id() {
 
       <div className={style.wrapper}>
         <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <section className={style.compsite}>
+        <section className={style.compSite}>
           <div className={style.web}>
             <div
               className={`h-28 w-24 items-center rounded-tl-lg rounded-bl-lg pt-8 justify-center mx-auto ${
-                finalsingleJob?.companyName === "Scoot"
+                finalSingleJob?.companyName === "Scoot"
                   ? `bg-[#Ea9310]`
-                  : finalsingleJob?.companyName === "Blogr"
+                  : finalSingleJob?.companyName === "Blogr"
                   ? `bg-[#De4b24]`
-                  : finalsingleJob?.companyName === "Vector"
+                  : finalSingleJob?.companyName === "Vector"
                   ? `bg-[#353641]`
-                  : finalsingleJob?.companyName === "Office Lite"
+                  : finalSingleJob?.companyName === "Office Lite"
                   ? `bg-[#2f4fc6]`
-                  : finalsingleJob?.companyName === "Pod"
+                  : finalSingleJob?.companyName === "Pod"
                   ? `bg-[#132034]`
-                  : finalsingleJob?.companyName === "Creative"
+                  : finalSingleJob?.companyName === "Creative"
                   ? `bg-[#4e1853]`
-                  : finalsingleJob?.companyName === "Pomodoro"
+                  : finalSingleJob?.companyName === "Pomodoro"
                   ? `bg-[#4721c4]`
-                  : finalsingleJob?.companyName === "Maker"
+                  : finalSingleJob?.companyName === "Maker"
                   ? `bg-[#21437d]`
-                  : finalsingleJob?.companyName === "Coffee Roasters"
+                  : finalSingleJob?.companyName === "Coffee Roasters"
                   ? `bg-[#F2ddca]`
-                  : finalsingleJob?.companyName === "MasterCraft"
+                  : finalSingleJob?.companyName === "MasterCraft"
                   ? `bg-[#1f1f1f]`
-                  : finalsingleJob?.companyName === "CrowdFund"
+                  : finalSingleJob?.companyName === "CrowdFund"
                   ? `bg-[#37c890]`
-                  : finalsingleJob?.companyName === "Typemaster"
+                  : finalSingleJob?.companyName === "Typemaster"
                   ? `bg-[#F26818]`
                   : `bg-black`
               }`}
             >
               <Image
-                src={finalsingleJob?.iconURL}
-                alt={finalsingleJob?.companyName}
+                src={finalSingleJob?.iconURL}
+                alt={finalSingleJob?.companyName}
                 width={35}
                 height={40}
               />
@@ -189,7 +189,7 @@ export default function Id() {
             <div className={style.websitetext}>
               <p className={style.text}>{job.company}</p>
               <Link href={`https://example.com/${job.company}`}>
-                <p className={style.webtext}>
+                <p className={style.webText}>
                   {`https://example.com/${job.company}`}
                 </p>
               </Link>
@@ -197,19 +197,19 @@ export default function Id() {
           </div>
 
           <Link href={`https://example.com/${job.company}`}>
-            <p className={style.compsitebutton}>Company Site</p>
+            <p className={style.compSiteButton}>Company Site</p>
           </Link>
         </section>
 
-        <section className={style.jobdesc}>{mapfinalsinglejob()}</section>
+        <section className={style.jobdesc}>{mapFinalSingleJob()}</section>
 
         <footer className={style.footer}>
           <div>
             <p className={style.text}>{job.id}</p>
-            <p className={style.comptext}>{job.company}</p>
+            <p className={style.compText}>{job.company}</p>
           </div>
           <Link href={`https://example.com/${job.company}`}>
-            <div className={style.butdiv}>Apply now</div>
+            <div className={style.butDiv}>Apply now</div>
           </Link>
         </footer>
       </div>
